@@ -1,0 +1,801 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sun Nov  2 23:58:52 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source T:/Xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'Yolo' on host 'laptop-h2r0e34p' (Windows NT_amd64 version 10.0) on Sun Nov 02 23:58:54 +0800 2025
+INFO: [HLS 200-10] In directory 'D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset lz4_compress_test.prj 
+INFO: [HLS 200-10] Creating and opening project 'D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj'.
+INFO: [HLS 200-1510] Running: add_files lz4_compress_test.cpp -cflags -ID:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw 
+INFO: [HLS 200-10] Adding design file 'lz4_compress_test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb lz4_compress_test.cpp -cflags -ID:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw 
+INFO: [HLS 200-10] Adding test bench file 'lz4_compress_test.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top lz4CompressEngineRun 
+INFO: [HLS 200-1510] Running: open_solution -reset sol1 
+INFO: [HLS 200-10] Creating and opening solution 'D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 14.2 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 14.2ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 10% 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.42ns.
+INFO: [HLS 200-1510] Running: config_compile -pragma_strict_mode 
+INFO: [HLS 200-1510] Running: csim_design -argv D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/tests/lz4_compress/sample.txt D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/tests/lz4_compress/sample.txt.encoded 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../lz4_compress_test.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../lz4_compress_test.cpp:18:
+In file included from T:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+T:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+../../../../lz4_compress_test.cpp:32:9: warning: 'PARALLEL_BLOCK' macro redefined [-Wmacro-redefined]
+#define PARALLEL_BLOCK 1
+        ^
+D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/s2mm.hpp:306:9: note: previous definition is here
+#define PARALLEL_BLOCK 8
+        ^
+2 warnings generated.
+------- Compression Ratio: 2.09396 -------
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1248
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:07; Allocated memory: 1.332 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.143 seconds; current allocated memory: 260.664 MB.
+INFO: [HLS 200-10] Analyzing design file 'lz4_compress_test.cpp' ... 
+WARNING: [HLS 207-910] 'PARALLEL_BLOCK' macro redefined (lz4_compress_test.cpp:32:9)
+INFO: [HLS 207-71] previous definition is here (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/s2mm.hpp:306:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:75:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:264:9)
+WARNING: [HLS 207-5292] unused parameter 'no_blocks' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/stream_downsizer.hpp:435:38)
+WARNING: [HLS 207-5292] unused parameter 'argc' (lz4_compress_test.cpp:74:14)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 12.943 seconds; current allocated memory: 267.293 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 3,842 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,441 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 909 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 885 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 884 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 926 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 867 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 867 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 867 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 896 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 896 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 871 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,590 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,145 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,167 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,189 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-199] Ignoring dependence pragma on local scalar variable 'match_length'. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw\lz4_compress.hpp:133:9)
+WARNING: [HLS 214-199] Ignoring dependence pragma on local scalar variable 'lit_length'. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw\lz4_compress.hpp:132:9)
+WARNING: [HLS 214-199] Ignoring dependence pragma on local scalar variable 'match_offset'. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw\lz4_compress.hpp:131:9)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_331_2' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:331:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_340_3' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:340:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_113_3' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:113:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_164_4' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:164:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_171_5' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:171:31)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_331_2' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:331:27) in function 'xf::compression::lzBestMatchFilter<6, 65536>' completely with a factor of 5 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:313:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_340_3' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:340:27) in function 'xf::compression::lzBestMatchFilter<6, 65536>' completely with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:313:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_321_1' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:321:20) in function 'xf::compression::lzBestMatchFilter<6, 65536>' completely with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:313:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_113_3' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:113:27) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' completely with a factor of 5 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_164_4' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:164:27) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' completely with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_171_5' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:171:31) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' completely with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-188] Unrolling loop 'dict_flush_cold' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:93:5) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' partially with a factor of 15 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-188] Unrolling loop 'dict_flush_hot' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:85:5) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' partially with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_78_1' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:78:22) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>' completely with a factor of 6 (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:58:0)
+INFO: [HLS 214-248] Applying array_partition to 'present_window': Complete partitioning on dimension 1. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:99:13)
+INFO: [HLS 214-248] Applying array_partition to 'compare_window': Complete partitioning on dimension 1. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:317:18)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=6 dim=1' for array 'dict_hot' due to pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:86:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=15 dim=1' for array 'dict_cold' due to pipeline pragma (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:94:9)
+INFO: [HLS 214-248] Applying array_partition to 'dict_hot': Cyclic partitioning with factor 6 on dimension 1. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70:17)
+INFO: [HLS 214-248] Applying array_partition to 'dict_cold': Cyclic partitioning with factor 15 on dimension 1. (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74:14)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 9.788 seconds; current allocated memory: 268.742 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 268.742 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 276.301 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 280.207 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from 249 to 248 for loop 'dict_flush_cold' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:93:14) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 249 to 248 for loop 'dict_flush_cold' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:93:14) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>'.
+INFO: [XFORM 203-712] Applying dataflow to function 'xf::compression::lz4Compress<4096, 1>' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw\lz4_compress.hpp:291:1), detected/extracted 2 process function(s): 
+	 'xf::compression::details::lz4CompressPart1<4096, 1>'
+	 'xf::compression::details::lz4CompressPart2'.
+INFO: [XFORM 203-712] Applying dataflow to function 'lz4CompressEngineRun' (lz4_compress_test.cpp:47:1), detected/extracted 4 process function(s): 
+	 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>'
+	 'xf::compression::lzBestMatchFilter<6, 65536>'
+	 'xf::compression::lzBooster<255, 16384, 64>'
+	 'xf::compression::lz4Compress<4096, 1>'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:167:35) to (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:107:5) in function 'xf::compression::lzCompress<6, 4, 65536, 6, 1, 4096, 64>'... converting 49 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:328:9) to (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:327:5) in function 'xf::compression::lzBestMatchFilter<6, 65536>'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'xf::compression::lzBestMatchFilter<6, 65536>' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:313:5)...5 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'xf::compression::details::lz4CompressPart2' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw\lz4_compress.hpp:104:5)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.546 seconds; current allocated memory: 304.660 MB.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.5' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.4' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.3' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.2' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.1' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:70).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.14' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.13' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.12' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.11' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.10' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.9' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.8' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.7' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.6' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.5' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.4' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.3' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.2' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.1' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_compress.hpp:74).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_mem' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:560).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot.1'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_hot'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.14'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.10'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold.1'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'dict_cold'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_mem' (D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/include/hw/lz_optional.hpp:560).
+WARNING: [HLS 200-1450] Process lz4CompressPart1<4096, 1> has both a successor and writes an output to its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this output via a successor process.
+Resolution: For help on HLS 200-1450 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1450.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.738 seconds; current allocated memory: 442.449 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lz4CompressEngineRun' ...
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Pipeline_dict_flush_hot' to 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Pipeline_dict_flush_cold' to 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Outline_VITIS_LOOP_101_2' to 'lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Pipeline_lz_compress' to 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Pipeline_lz_compress_leftover' to 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>_Pipeline_lz_left_bytes' to 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes'.
+WARNING: [SYN 201-103] Legalizing function name 'lzCompress<6, 4, 65536, 6, 1, 4096, 64>' to 'lzCompress_6_4_65536_6_1_4096_64_s'.
+WARNING: [SYN 201-103] Legalizing function name 'lzBestMatchFilter<6, 65536>_Pipeline_lz_bestMatchFilter' to 'lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter'.
+WARNING: [SYN 201-103] Legalizing function name 'lzBestMatchFilter<6, 65536>' to 'lzBestMatchFilter_6_65536_s'.
+WARNING: [SYN 201-103] Legalizing function name 'lzBooster<255, 16384, 64>_Pipeline_lz_booster' to 'lzBooster_255_16384_64_Pipeline_lz_booster'.
+WARNING: [SYN 201-103] Legalizing function name 'lzBooster<255, 16384, 64>' to 'lzBooster_255_16384_64_s'.
+WARNING: [SYN 201-103] Legalizing function name 'lz4CompressPart1<4096, 1>_Pipeline_lz4_divide' to 'lz4CompressPart1_4096_1_Pipeline_lz4_divide'.
+WARNING: [SYN 201-103] Legalizing function name 'lz4CompressPart1<4096, 1>' to 'lz4CompressPart1_4096_1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'lz4Compress<4096, 1>' to 'lz4Compress_4096_1_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'dict_flush_hot'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'dict_flush_hot'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.273 seconds; current allocated memory: 446.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 448.109 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'dict_flush_cold'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'dict_flush_cold'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 448.773 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 448.930 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 449.434 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 449.605 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz_compress'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 20, loop 'lz_compress'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.595 seconds; current allocated memory: 462.359 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.214 seconds; current allocated memory: 462.461 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz_compress_leftover'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lz_compress_leftover'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 462.469 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 462.469 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz_left_bytes'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lz_left_bytes'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 462.469 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.045 seconds; current allocated memory: 462.488 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzCompress_6_4_65536_6_1_4096_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 462.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 462.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz_bestMatchFilter'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'lz_bestMatchFilter'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.138 seconds; current allocated memory: 462.586 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 462.586 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzBestMatchFilter_6_65536_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 462.586 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 462.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzBooster_255_16384_64_Pipeline_lz_booster' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz_booster'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'lz_booster'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.137 seconds; current allocated memory: 462.641 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 462.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lzBooster_255_16384_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 462.641 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 462.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4CompressPart1_4096_1_Pipeline_lz4_divide' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz4_divide'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'lz4_divide'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 462.641 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.062 seconds; current allocated memory: 462.648 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4CompressPart1_4096_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 462.656 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 462.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4CompressPart2_Pipeline_lz4_compress' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lz4_compress'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'lz4_compress'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.145 seconds; current allocated memory: 462.902 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.092 seconds; current allocated memory: 463.262 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4CompressPart2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.094 seconds; current allocated memory: 463.414 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 463.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4Compress_4096_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 463.605 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.057 seconds; current allocated memory: 463.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lz4CompressEngineRun' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 463.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 464.047 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.117 seconds; current allocated memory: 465.574 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.162 seconds; current allocated memory: 467.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 468.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress' pipeline 'lz_compress' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_12ns_14ns_25_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_13_3_432_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_13_5_3_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_31_4_432_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_12ns_4ns_3_16_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_12ns_5ns_4_16_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.652 seconds; current allocated memory: 477.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover' pipeline 'lz_compress_leftover' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_11_3_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.424 seconds; current allocated memory: 487.934 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes' pipeline 'lz_left_bytes' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 487.934 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzCompress_6_4_65536_6_1_4096_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'lzCompress_6_4_65536_6_1_4096_64_s' is 9333 from HDL expression: (1'b1 == ap_CS_fsm_state5)
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzCompress_6_4_65536_6_1_4096_64_s'.
+INFO: [RTMG 210-278] Implementing memory 'lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_hot_RAM_2P_LUTRAM_1R1W' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_cold_RAM_T2P_BRAM_1R1W' using block RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 489.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter' pipeline 'lz_bestMatchFilter' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.346 seconds; current allocated memory: 491.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzBestMatchFilter_6_65536_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_13_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzBestMatchFilter_6_65536_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.308 seconds; current allocated memory: 493.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzBooster_255_16384_64_Pipeline_lz_booster' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lzBooster_255_16384_64_Pipeline_lz_booster' pipeline 'lz_booster' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzBooster_255_16384_64_Pipeline_lz_booster'.
+INFO: [RTMG 210-278] Implementing memory 'lz4CompressEngineRun_lzBooster_255_16384_64_Pipeline_lz_booster_local_mem_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.252 seconds; current allocated memory: 495.945 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lzBooster_255_16384_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lzBooster_255_16384_64_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.382 seconds; current allocated memory: 498.062 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4CompressPart1_4096_1_Pipeline_lz4_divide' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lz4CompressPart1_4096_1_Pipeline_lz4_divide' pipeline 'lz4_divide' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4CompressPart1_4096_1_Pipeline_lz4_divide'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.208 seconds; current allocated memory: 499.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4CompressPart1_4096_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4CompressPart1_4096_1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.248 seconds; current allocated memory: 500.371 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4CompressPart2_Pipeline_lz4_compress' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'lz4CompressPart2_Pipeline_lz4_compress' pipeline 'lz4_compress' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4CompressPart2_Pipeline_lz4_compress'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.221 seconds; current allocated memory: 502.012 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4CompressPart2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4CompressPart2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.466 seconds; current allocated memory: 504.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4Compress_4096_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4Compress_4096_1_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'lit_outStream_U(lz4CompressEngineRun_fifo_w8_d4096_B)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'lenOffset_Stream_U(lz4CompressEngineRun_fifo_w64_d64_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'input_size_c_U(lz4CompressEngineRun_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_lz4CompressPart2_U0_U(lz4CompressEngineRun_start_for_lz4CompressPart2_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 505.707 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lz4CompressEngineRun' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/inStream' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/lz4Out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/lz4Out_eos' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/lz4OutSize' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/max_lit_limit' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/input_size' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lz4CompressEngineRun/core_idx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lz4CompressEngineRun' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] RTL name 'fifo_w32_d2_S' is changed to 'fifo_w32_d2_S_x' due to conflict.
+WARNING: [RTGEN 206-101] Port 'lz4CompressEngineRun/core_idx' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lz4CompressEngineRun'.
+INFO: [RTMG 210-285] Implementing FIFO 'compressdStream_U(lz4CompressEngineRun_fifo_w32_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'input_size_c2_U(lz4CompressEngineRun_fifo_w32_d2_S_x)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bestMatchStream_U(lz4CompressEngineRun_fifo_w32_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'input_size_c1_U(lz4CompressEngineRun_fifo_w32_d2_S_x)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'boosterStream_U(lz4CompressEngineRun_fifo_w32_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'input_size_c_U(lz4CompressEngineRun_fifo_w32_d2_S_x)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_lzBestMatchFilter_6_65536_U0_U(lz4CompressEngineRun_start_for_lzBestMatchFilter_6_65536_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_lzBooster_255_16384_64_U0_U(lz4CompressEngineRun_start_for_lzBooster_255_16384_64_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_lz4Compress_4096_1_U0_U(lz4CompressEngineRun_start_for_lz4Compress_4096_1_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.326 seconds; current allocated memory: 507.281 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.902 seconds; current allocated memory: 510.738 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.621 seconds; current allocated memory: 522.602 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for lz4CompressEngineRun.
+INFO: [VLOG 209-307] Generating Verilog RTL for lz4CompressEngineRun.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 78.73 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:36; Allocated memory: 263.020 MB.
+INFO: [HLS 200-1510] Running: cosim_design -disable_dependency_check -argv D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/tests/lz4_compress/sample.txt D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/../../../L1/tests/lz4_compress/sample.txt.encoded 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "T:/Xilinx/Vitis/2024.2/vcxx/libexec/clang++"
+   Compiling apatb_lz4CompressEngineRun.cpp
+   Compiling lz4_compress_test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_lz4CompressEngineRun_util.cpp
+   Compiling apatb_lz4CompressEngineRun_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+------- Compression Ratio: 2.09396 -------
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1248
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+D:\fpgachina2025_43478\data_compression\L1\tests\lz4_compress\lz4_compress_test.prj\sol1\sim\verilog>set PATH= 
+
+D:\fpgachina2025_43478\data_compression\L1\tests\lz4_compress\lz4_compress_test.prj\sol1\sim\verilog>call T:/Xilinx/Vivado/2024.2/bin/xelab xil_defaultlib.apatb_lz4CompressEngineRun_top glbl -Oenable_linking_all_libraries  -prj lz4CompressEngineRun.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib "ieee_proposed=./ieee_proposed" -s lz4CompressEngineRun  
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: T:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_lz4CompressEngineRun_top glbl -Oenable_linking_all_libraries -prj lz4CompressEngineRun.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib ieee_proposed=./ieee_proposed -s lz4CompressEngineRun 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_autofifo_inStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_inStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_autofifo_lz4Out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_lz4Out
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_autofifo_lz4OutSize.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_lz4OutSize
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_autofifo_lz4Out_eos.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_lz4Out_eos
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_lz4CompressEngineRun_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_fifo_w32_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d2_S
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d2_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_fifo_w32_d2_S_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d2_S_x
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d2_S_x_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_fifo_w32_d8_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d8_S
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w32_d8_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_fifo_w64_d64_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w64_d64_S
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w64_d64_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_fifo_w8_d4096_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w8_d4096_B
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_fifo_w8_d4096_B_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lz4CompressPart1_4096_1_Pipeline_lz4_divide.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lz4CompressPart1_4096_1_Pipeline_lz4_divide
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lz4CompressPart1_4096_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lz4CompressPart1_4096_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lz4CompressPart2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lz4CompressPart2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lz4CompressPart2_Pipeline_lz4_compress.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lz4CompressPart2_Pipeline_lz4_compress
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lz4Compress_4096_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lz4Compress_4096_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzBestMatchFilter_6_65536_Pipeline_lz_bestMatchFilter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzBestMatchFilter_6_65536_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzBestMatchFilter_6_65536_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzBooster_255_16384_64_Pipeline_lz_booster.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzBooster_255_16384_64_Pipeline_lz_booster
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzBooster_255_16384_64_Pipeline_lz_booster_local_mem_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzBooster_255_16384_64_Pipeline_lz_booster_local_mem_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzBooster_255_16384_64_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzBooster_255_16384_64_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Outline_VITIS_LOOP_101_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_cold
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_dict_flush_hot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_compress_leftover
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_Pipeline_lz_left_bytes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_cold_RAM_T2P_BRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_cold_RAM_T2P_BRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_hot_RAM_2P_LUTRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_lzCompress_6_4_65536_6_1_4096_64_s_dict_hot_RAM_2P_LUTRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_mul_12ns_14ns_25_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_mul_12ns_14ns_25_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_sparsemux_11_3_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_sparsemux_11_3_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_sparsemux_13_3_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_sparsemux_13_3_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_sparsemux_13_3_432_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_sparsemux_13_3_432_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_sparsemux_13_5_3_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_sparsemux_13_5_3_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_sparsemux_31_4_432_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_sparsemux_31_4_432_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_start_for_lz4CompressPart2_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lz4CompressPart2_U0
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lz4CompressPart2_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_start_for_lz4Compress_4096_1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lz4Compress_4096_1_U0
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lz4Compress_4096_1_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_start_for_lzBestMatchFilter_6_65536_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lzBestMatchFilter_6_65536_U0
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lzBestMatchFilter_6_65536_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_start_for_lzBooster_255_16384_64_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lzBooster_255_16384_64_U0
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_start_for_lzBooster_255_16384_64_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_urem_12ns_4ns_3_16_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_urem_12ns_4ns_3_16_1_divider
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_urem_12ns_4ns_3_16_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun_urem_12ns_5ns_4_16_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_urem_12ns_5ns_4_16_1_divider
+INFO: [VRFC 10-311] analyzing module lz4CompressEngineRun_urem_12ns_5ns_4_16_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_flow_contro...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_urem_12ns_4...
+Compiling module xil_defaultlib.lz4CompressEngineRun_urem_12ns_4...
+Compiling module xil_defaultlib.lz4CompressEngineRun_urem_12ns_5...
+Compiling module xil_defaultlib.lz4CompressEngineRun_urem_12ns_5...
+Compiling module xil_defaultlib.lz4CompressEngineRun_mul_12ns_14...
+Compiling module xil_defaultlib.lz4CompressEngineRun_sparsemux_3...
+Compiling module xil_defaultlib.lz4CompressEngineRun_sparsemux_1...
+Compiling module xil_defaultlib.lz4CompressEngineRun_sparsemux_1...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_sparsemux_1...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzCompress_...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzBestMatch...
+Compiling module xil_defaultlib.lz4CompressEngineRun_sparsemux_1...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzBestMatch...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzBooster_2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzBooster_2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lzBooster_2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lz4Compress...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lz4Compress...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lz4Compress...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lz4Compress...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w8_d40...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w8_d40...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w64_d6...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w64_d6...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_lz4Compress...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d8...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d8...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_fifo_w32_d2...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun_start_for_l...
+Compiling module xil_defaultlib.lz4CompressEngineRun
+Compiling module xil_defaultlib.AESL_autofifo_inStream
+Compiling module xil_defaultlib.AESL_autofifo_lz4Out
+Compiling module xil_defaultlib.AESL_autofifo_lz4Out_eos
+Compiling module xil_defaultlib.AESL_autofifo_lz4OutSize
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_2
+Compiling module xil_defaultlib.df_fifo_intf_default
+Compiling module xil_defaultlib.df_process_intf_default
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=10)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=5)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_lz4CompressEngineRun_top
+Compiling module work.glbl
+Built simulation snapshot lz4CompressEngineRun
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  3 00:00:35 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/lz4CompressEngineRun/xsim_script.tcl
+# xsim {lz4CompressEngineRun} -autoloadwcfg -tclbatch {lz4CompressEngineRun.tcl}
+Time resolution is 1 ps
+source lz4CompressEngineRun.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "135000"
+// RTL Simulation : 1 / 1 [n/a] @ "22954000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 23039500 ps : File "D:/fpgachina2025_43478/data_compression/L1/tests/lz4_compress/lz4_compress_test.prj/sol1/sim/verilog/lz4CompressEngineRun.autotb.v" Line 508
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Nov  3 00:00:39 2025...
+INFO: [COSIM 212-316] Starting C post checking ...
+------- Compression Ratio: 2.09396 -------
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1248
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:59; Allocated memory: 10.996 MB.
+INFO: [HLS 200-112] Total CPU user time: 17 seconds. Total CPU system time: 9 seconds. Total elapsed time: 109.781 seconds; peak allocated memory: 534.402 MB.

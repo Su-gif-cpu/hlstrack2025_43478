@@ -1,0 +1,840 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  3 00:02:17 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source T:/Xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'Yolo' on host 'laptop-h2r0e34p' (Windows NT_amd64 version 10.0) on Mon Nov 03 00:02:19 +0800 2025
+INFO: [HLS 200-10] In directory 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset cholesky_test.prj 
+INFO: [HLS 200-10] Creating and opening project 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj'.
+INFO: [HLS 200-1510] Running: add_files D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/kernel/kernel_cholesky_0.cpp -cflags -DMATRIX_DIM=3 -DMATRIX_LOWER_TRIANGULAR=0 -DSEL_ARCH=0 -D_DATA_PATH=D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/datas/ -I./ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/host/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/kernel/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L2/include -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../../utils/L1/include/ 
+INFO: [HLS 200-10] Adding design file 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/kernel/kernel_cholesky_0.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/host/test_cholesky.cpp -cflags -DMATRIX_DIM=3 -DMATRIX_LOWER_TRIANGULAR=0 -DSEL_ARCH=0 -D_DATA_PATH=D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/datas/ -I./ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/host/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/kernel/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/ -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw -I ./host -ID:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../../utils/L1/include/ 
+INFO: [HLS 200-10] Adding test bench file 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/host/test_cholesky.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top kernel_cholesky_0 
+INFO: [HLS 200-1510] Running: open_solution -reset sol1 
+INFO: [HLS 200-10] Creating and opening solution 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 5.8 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5.8ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 10% 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.58ns.
+INFO: [HLS 200-1510] Running: csim_design 
+WARNING: [HLS 200-1998] cannot find relative file path '../../host' in directory(s): D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/solution D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../host/test_cholesky.cpp in debug mode
+   Compiling ../../../../../kernel/kernel_cholesky_0.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../../host/test_cholesky.cpp:21:
+In file included from D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/host/./test_cholesky.hpp:20:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_x_complex.h:13:
+In file included from T:/Xilinx/Vitis/2024.2/include/ap_fixed.h:9:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+T:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+In file included from ../../../../../kernel/kernel_cholesky_0.cpp:17:
+In file included from D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/tests/cholesky/kernel/./kernel_cholesky.hpp:20:
+In file included from ../../../.././././dut_type.hpp:20:
+In file included from T:/Xilinx/Vitis/2024.2/include/ap_fixed.h:9:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+T:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+Running 1 fixed point tests per matrix type on 3 x 3 matrices with LowerTriangular set to 0
+RESULTS_TABLE,Test,IMAT,L Matching,DUT Ratio,LAPACK Ratio,Relative Ratio Difference
+RESULTS_TABLE,0,1,1,0.333333,0.333333,0
+RESULTS_TABLE,0,2,0,0.423319,0.382765,4.05541
+RESULTS_TABLE,0,3,1,0.354167,0.354167,0
+RESULTS_TABLE,0,4,0,0.464593,0.491726,-2.7133
+RESULTS_TABLE,0,5,0,0.623708,0.496184,12.7524
+RESULTS_TABLE,0,6,0,0.253352,0.192952,6.04007
+RESULTS_TABLE,0,7,0,0.313315,0.258333,5.49821
+RESULTS_TABLE,0,9,0,0.441006,0.441006,0
+SUMMARY_TABLE,imat,Min Ratio, Max Ratio,Min Diff (Smaller),Max Diff (Larger),Same,Better,Worse
+SUMMARY_TABLE,1,0.333333,0.333333,0,0,1,0,0
+SUMMARY_TABLE,2,0.423319,0.423319,0,4.05541,0,0,1
+SUMMARY_TABLE,3,0.354167,0.354167,0,0,1,0,0
+SUMMARY_TABLE,4,0.464593,0.464593,-2.7133,0,0,1,0
+SUMMARY_TABLE,5,0.623708,0.623708,0,12.7524,0,0,1
+SUMMARY_TABLE,6,0.253352,0.253352,0,6.04007,0,0,1
+SUMMARY_TABLE,7,0.313315,0.313315,0,5.49821,0,0,1
+SUMMARY_TABLE,8,30,0,0,0,0,0,0
+SUMMARY_TABLE,9,0.441006,0.441006,0,0,1,0,0
+SUMMARY_TABLE,all,0.253352,0.623708,-2.7133,12.7524,3,1,4
+TB:Pass
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:39; Allocated memory: 1.156 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+WARNING: [HLS 200-1998] cannot find relative file path '../../host' in directory(s): D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/solution D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.203 seconds; current allocated memory: 261.266 MB.
+INFO: [HLS 200-10] Analyzing design file '../kernel/kernel_cholesky_0.cpp' ... 
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:139:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:140:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:156:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:157:9)
+WARNING: [HLS 207-5569] unexpected pragma parameter 'core' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:231:40)
+WARNING: [HLS 207-5292] unused parameter 'info' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/../../../L2/include/hw/MatrixDecomposition/potrf.hpp:170:39)
+WARNING: [HLS 207-5292] unused parameter 'rows' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:70:38)
+WARNING: [HLS 207-5292] unused parameter 'cols' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:70:54)
+WARNING: [HLS 207-5292] unused parameter 'x' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:70:62)
+WARNING: [HLS 207-5292] unused parameter 'x' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:76:78)
+WARNING: [HLS 207-5292] unused parameter 'x' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:87:76)
+WARNING: [HLS 207-5292] unused parameter 'extra_pass' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/./hw/qrf.hpp:306:21)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 55.078 seconds; current allocated memory: 271.270 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 15,705 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 28,156 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,512 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,305 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,863 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,777 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,747 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,753 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,826 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,850 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,628 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,592 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,592 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,592 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,564 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,414 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-131] Inlining function 'ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> cholesky_abs_square<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:309:71)
+INFO: [HLS 214-131] Inlining function 'void cholesky_set_real<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >&, ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:220:9)
+INFO: [HLS 214-131] Inlining function 'ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> cholesky_get_real<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:229:32)
+INFO: [HLS 214-131] Inlining function 'int cholesky_fast_sqrt_real<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0>&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:233:6)
+INFO: [HLS 214-131] Inlining function 'void cholesky_set_real<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >&, ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:240:9)
+INFO: [HLS 214-131] Inlining function 'void cholesky_set_real<ap_fixed<33, 17, (ap_q_mode)4, (ap_o_mode)0, 0> >(ap_fixed<33, 17, (ap_q_mode)4, (ap_o_mode)0, 0>&, ap_fixed<33, 17, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:257:13)
+INFO: [HLS 214-131] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > cholesky_complex_mul<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:291:41)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_1066_4' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1066:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_1056_2' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1056:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_1066_4' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1066:21) in function 'xf::solver::cholesky<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1050:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_1056_2' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1056:21) in function 'xf::solver::cholesky<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1050:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_203_3' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:203:23) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_262_5' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:262:27) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_284_6' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:284:35) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_209_4' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:209:27) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_184_1' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:184:20) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_186_2' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:186:20) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' completely with a factor of 3 (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+WARNING: [HLS 214-366] Duplicating function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166)' as different function signatures were detected between this call site and other call site(s). This may impact the resources used in the design. (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:83:18)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&, ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:75:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166.467)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166.467)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator-=(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator-(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:244:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag()' into 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag()' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.318.326.332)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.318.326.332)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.318.326.332)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> const&) (.117.126)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.114.123)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:343:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.114.123)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:351:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&, ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.108.135)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.108.135)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.105.132.137.229)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&, ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.108.288.307)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.108.288.307)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::imag(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&) (.92)' into 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:343:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166.175.203)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166.175.203)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.185)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator*=(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator*(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:114:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag()' into 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex(ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&, ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:57:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:82:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::real(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag(ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<17, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::real() const' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::sqrtf(float)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::real(ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag(ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&) (.105.132.137.229)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >& hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.185)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::real() const' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::imag() const' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::real(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >::imag(ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const&) (.166)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator-=(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >& hls::x_complex<ap_fixed<34, 2, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator=<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >(hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> > const&)' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::real() const' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >::imag() const' into 'int choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:165:0)
+INFO: [HLS 214-178] Inlining function 'int xf::solver::choleskyTop<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >(hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > const (*) [3], hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > (*) [3])' into 'int xf::solver::cholesky<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > > >(hls::stream<hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, 0>&, hls::stream<hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, 0>&)' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1050:0)
+INFO: [HLS 214-178] Inlining function 'int xf::solver::cholesky<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > > >(hls::stream<hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, 0>&, hls::stream<hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, 0>&)' into 'kernel_cholesky_0' (../kernel/kernel_cholesky_0.cpp:24:0)
+INFO: [HLS 214-248] Applying array_partition to 'A.re.i': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1051:15)
+INFO: [HLS 214-248] Applying array_partition to 'A.im.i': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1051:15)
+INFO: [HLS 214-248] Applying array_partition to 'L.re.i': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1052:16)
+INFO: [HLS 214-248] Applying array_partition to 'L.im.i': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1052:16)
+INFO: [HLS 214-241] Aggregating fifo (hls::stream) variable 'matrixLStrm' with compact=bit mode in 32-bits (../kernel/kernel_cholesky_0.cpp:24:0)
+INFO: [HLS 214-241] Aggregating fifo (hls::stream) variable 'matrixAStrm' with compact=bit mode in 32-bits (../kernel/kernel_cholesky_0.cpp:24:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 13.37 seconds; current allocated memory: 274.980 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 275.008 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.155 seconds; current allocated memory: 282.828 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator-' into 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:223) automatically.
+WARNING: [SYNCHK 200-23] D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:97: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 288.629 MB.
+INFO: [XFORM 203-602] Inlining function 'hls::x_complex<ap_fixed<35, 5, (ap_q_mode)4, (ap_o_mode)0, 0> >::operator-' into 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:223) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::x_conj<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)0, 0> >' into 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:249) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (T:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_x_complex.h:59:23) to (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:255:13) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >'... converting 34 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:198:43) to (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:255:13) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >'... converting 34 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:198:43) in function 'choleskySmall<false, 3, xf::solver::choleskyTraits<false, 3, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> >, hls::x_complex<ap_fixed<16, 1, (ap_q_mode)4, (ap_o_mode)3, 0> > >'... converting 34 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.587 seconds; current allocated memory: 316.594 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.549 seconds; current allocated memory: 347.191 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'kernel_cholesky_0' ...
+WARNING: [SYN 201-103] Legalizing function name 'operator*' to 'operator_mul'.
+WARNING: [SYN 201-103] Legalizing function name 'choleskySmall<false,3,choleskyTraits,x_complex,x_complex<ap_fixed >>' to 'choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_1054_1'.
+WARNING: [HLS 200-880] The II Violation in module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1' (loop 'VITIS_LOOP_1054_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between fifo read operation ('matrixAStrm_read_1', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixAStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) and fifo read operation ('matrixAStrm_read', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixAStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1' (loop 'VITIS_LOOP_1054_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between fifo read operation ('matrixAStrm_read_2', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixAStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) and fifo read operation ('matrixAStrm_read', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixAStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1057->../kernel/kernel_cholesky_0.cpp:26).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 4, loop 'VITIS_LOOP_1054_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.255 seconds; current allocated memory: 351.449 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 352.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'operator_mul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 353.113 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.076 seconds; current allocated memory: 353.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.81 seconds; current allocated memory: 368.949 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.621 seconds; current allocated memory: 369.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_1064_3'.
+WARNING: [HLS 200-880] The II Violation in module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3' (loop 'VITIS_LOOP_1064_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between fifo write operation ('matrixLStrm_write_ln1067', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixLStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) and fifo write operation ('matrixLStrm_write_ln1067', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixLStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3' (loop 'VITIS_LOOP_1064_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between fifo write operation ('matrixLStrm_write_ln1067', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixLStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) and fifo write operation ('matrixLStrm_write_ln1067', D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26) on port 'matrixLStrm' (D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/../../../../L1/include/hw/cholesky.hpp:1067->../kernel/kernel_cholesky_0.cpp:26).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 4, loop 'VITIS_LOOP_1064_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.616 seconds; current allocated memory: 369.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 369.281 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kernel_cholesky_0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 369.449 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 369.980 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1' pipeline 'VITIS_LOOP_1054_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.133 seconds; current allocated memory: 371.938 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'operator_mul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_35s_32s_66_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'operator_mul'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.249 seconds; current allocated memory: 374.441 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'bitselect_1ns_54ns_32s_1_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ctlz_17_17_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsqrt_32ns_32ns_32_28_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_16s_32_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_16s_32_2_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_50ns_34s_50_54_seq_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_34_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.076 seconds; current allocated memory: 389.496 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3' pipeline 'VITIS_LOOP_1064_3' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_7_2_1_1_1' is changed to 'sparsemux_7_2_1_1_1_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_16_1_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 3 seconds. Elapsed time: 3.836 seconds; current allocated memory: 417.488 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_cholesky_0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_cholesky_0/matrixAStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_cholesky_0/matrixLStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'kernel_cholesky_0' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_cholesky_0'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 417.488 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.683 seconds; current allocated memory: 417.488 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.832 seconds; current allocated memory: 430.863 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for kernel_cholesky_0.
+INFO: [VLOG 209-307] Generating Verilog RTL for kernel_cholesky_0.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 191.77 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:01:21; Allocated memory: 170.148 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "T:/Xilinx/Vitis/2024.2/vcxx/libexec/clang++"
+   Compiling apatb_kernel_cholesky_0.cpp
+   Compiling apatb_kernel_cholesky_0_util.cpp
+   Compiling test_cholesky.cpp_pre.cpp.tb.cpp
+   Compiling kernel_cholesky_0.cpp_pre.cpp.tb.cpp
+   Compiling apatb_kernel_cholesky_0_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Running 1 fixed point tests per matrix type on 3 x 3 matrices with LowerTriangular set to 0
+RESULTS_TABLE,Test,IMAT,L Matching,DUT Ratio,LAPACK Ratio,Relative Ratio Difference
+RESULTS_TABLE,0,1,1,0.333333,0.333333,0
+RESULTS_TABLE,0,2,0,0.423319,0.382765,4.05541
+RESULTS_TABLE,0,3,1,0.354167,0.354167,0
+RESULTS_TABLE,0,4,0,0.464593,0.491726,-2.7133
+RESULTS_TABLE,0,5,0,0.623708,0.496184,12.7524
+RESULTS_TABLE,0,6,0,0.253352,0.192952,6.04007
+RESULTS_TABLE,0,7,0,0.313315,0.258333,5.49821
+RESULTS_TABLE,0,9,0,0.441006,0.441006,0
+SUMMARY_TABLE,imat,Min Ratio, Max Ratio,Min Diff (Smaller),Max Diff (Larger),Same,Better,Worse
+SUMMARY_TABLE,1,0.333333,0.333333,0,0,1,0,0
+SUMMARY_TABLE,2,0.423319,0.423319,0,4.05541,0,0,1
+SUMMARY_TABLE,3,0.354167,0.354167,0,0,1,0,0
+SUMMARY_TABLE,4,0.464593,0.464593,-2.7133,0,0,1,0
+SUMMARY_TABLE,5,0.623708,0.623708,0,12.7524,0,0,1
+SUMMARY_TABLE,6,0.253352,0.253352,0,6.04007,0,0,1
+SUMMARY_TABLE,7,0.313315,0.313315,0,5.49821,0,0,1
+SUMMARY_TABLE,8,30,0,0,0,0,0,0
+SUMMARY_TABLE,9,0.441006,0.441006,0,0,1,0,0
+SUMMARY_TABLE,all,0.253352,0.623708,-2.7133,12.7524,3,1,4
+TB:Pass
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+WARNING: T:/Xilinx/Vivado/2024.2/tps/win64/jre11.0.16_1 does not exist.
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  3 00:05:26 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/.autopilot/db/ip_tmp'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'T:/Xilinx/Vivado/2024.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  3 00:05:41 2025...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+D:\fpgachina2025_43478\solver\L1\tests\cholesky\complex_fixed_arch0\cholesky_test.prj\sol1\sim\verilog>set PATH= 
+
+D:\fpgachina2025_43478\solver\L1\tests\cholesky\complex_fixed_arch0\cholesky_test.prj\sol1\sim\verilog>call T:/Xilinx/Vivado/2024.2/bin/xelab xil_defaultlib.apatb_kernel_cholesky_0_top glbl -Oenable_linking_all_libraries  -prj kernel_cholesky_0.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib "ieee_proposed=./ieee_proposed" -s kernel_cholesky_0  
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: T:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_kernel_cholesky_0_top glbl -Oenable_linking_all_libraries -prj kernel_cholesky_0.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib ieee_proposed=./ieee_proposed -s kernel_cholesky_0 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/ip/xil_defaultlib/kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/ip/xil_defaultlib/kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/AESL_autofifo_matrixAStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_matrixAStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/AESL_autofifo_matrixLStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_matrixLStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_kernel_cholesky_0_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_bitselect_1ns_54ns_32s_1_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_bitselect_1ns_54ns_32s_1_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_choleskySmall_false_3_choleskyTraits_x_complex_x_complex_ap_fixed_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_ctlz_17_17_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_ctlz_17_17_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_fpext_32ns_64_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_fsqrt_32ns_32ns_32_28_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_kernel_cholesky_0_Pipeline_VITIS_LOOP_1054_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_kernel_cholesky_0_Pipeline_VITIS_LOOP_1064_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_mul_16s_16s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_mul_16s_16s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_mul_16s_16s_32_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_mul_16s_16s_32_2_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_mul_35s_32s_66_5_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_mul_35s_32s_66_5_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_operator_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_operator_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_sdiv_50ns_34s_50_54_seq_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sdiv_50ns_34s_50_54_seq_1_divseq
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sdiv_50ns_34s_50_54_seq_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_sparsemux_7_2_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sparsemux_7_2_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_sparsemux_7_2_1_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sparsemux_7_2_1_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_sparsemux_7_2_1_1_1_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sparsemux_7_2_1_1_1_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0_sparsemux_7_2_34_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module kernel_cholesky_0_sparsemux_7_2_34_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_viv_comp
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_14.xbip_utils_v3_0_14_pkg
+Compiling package axi_utils_v2_0_10.axi_utils_v2_0_10_pkg
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_exp_table...
+Compiling package mult_gen_v12_0_22.mult_gen_v12_0_22_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_pkg
+Compiling package floating_point_v7_1_19.flt_utils
+Compiling package unisim.vcomponents
+Compiling package xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv_comp
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.kernel_cholesky_0_flow_control_l...
+Compiling module xil_defaultlib.kernel_cholesky_0_kernel_cholesk...
+Compiling module xil_defaultlib.kernel_cholesky_0_mul_35s_32s_66...
+Compiling module xil_defaultlib.kernel_cholesky_0_operator_mul
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=23,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8,length=0)\]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="ki...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(a_fw=24,op_delay...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv_exp [\flt_to_flt_conv_exp(r_w=64,r_ew...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv [\flt_to_flt_conv(c_xdevicefamily...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=64,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.kernel_cholesky_0_fpext_32ns_64_...
+Compiling module xil_defaultlib.kernel_cholesky_0_fpext_32ns_64_...
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=26)\]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=5,fast_input=true)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=24)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=5,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=6,fast_input=true)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=3)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=22)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=6,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=7,fast_input=true)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=20)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=7,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8,fast_input=true)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=5)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=18)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=9,fast_input=true)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=6)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=16)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=9,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=10,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=7)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=14)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=10,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=10)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=13,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=14,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=14,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=15,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=15,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=16,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=13)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=16,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=17,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=17,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=18,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=15)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=18,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=19,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=19,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=20,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=17)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=20,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=21,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=21,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=22,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=19)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=22,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=23,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=24,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=21)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=24,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=26,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=23)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=26,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=27,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=28,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=28,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=29,fast_input=true)...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant_addsub [\flt_sqrt_mant_addsub(c_xdevicef...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_sqrt_mant [\flt_sqrt_mant(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8,length=25,fast_in...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,length=25,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(length=25,fast_input=true...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_sqrt_exp [\flt_sqrt_exp(c_xdevicefamily="n...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=3,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture virtex of entity floating_point_v7_1_19.flt_sqrt [\flt_sqrt(c_xdevicefamily="zynq"...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.kernel_cholesky_0_fsqrt_32ns_32n...
+Compiling module xil_defaultlib.kernel_cholesky_0_fsqrt_32ns_32n...
+Compiling module xil_defaultlib.kernel_cholesky_0_ctlz_17_17_1_1...
+Compiling module xil_defaultlib.kernel_cholesky_0_bitselect_1ns_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sparsemux_7_2_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sparsemux_7_2_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sdiv_50ns_34s_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sdiv_50ns_34s_...
+Compiling module xil_defaultlib.kernel_cholesky_0_mul_16s_16s_32...
+Compiling module xil_defaultlib.kernel_cholesky_0_mul_16s_16s_32...
+Compiling module xil_defaultlib.kernel_cholesky_0_choleskySmall_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sparsemux_7_2_...
+Compiling module xil_defaultlib.kernel_cholesky_0_sparsemux_7_2_...
+Compiling module xil_defaultlib.kernel_cholesky_0_kernel_cholesk...
+Compiling module xil_defaultlib.kernel_cholesky_0
+Compiling module xil_defaultlib.AESL_autofifo_matrixAStrm
+Compiling module xil_defaultlib.AESL_autofifo_matrixLStrm
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=3)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_kernel_cholesky_0_top
+Compiling module work.glbl
+Built simulation snapshot kernel_cholesky_0
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  3 00:06:13 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/kernel_cholesky_0/xsim_script.tcl
+# xsim {kernel_cholesky_0} -autoloadwcfg -tclbatch {kernel_cholesky_0.tcl}
+Time resolution is 1 ps
+source kernel_cholesky_0.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 8 [0.00%] @ "113000"
+// RTL Simulation : 1 / 8 [100.00%] @ "1842000"
+// RTL Simulation : 2 / 8 [100.00%] @ "3564000"
+// RTL Simulation : 3 / 8 [100.00%] @ "5287000"
+// RTL Simulation : 4 / 8 [100.00%] @ "7009000"
+// RTL Simulation : 5 / 8 [100.00%] @ "8732000"
+// RTL Simulation : 6 / 8 [100.00%] @ "10455000"
+// RTL Simulation : 7 / 8 [100.00%] @ "12177000"
+// RTL Simulation : 8 / 8 [100.00%] @ "13900000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 13934500 ps : File "D:/fpgachina2025_43478/solver/L1/tests/cholesky/complex_fixed_arch0/cholesky_test.prj/sol1/sim/verilog/kernel_cholesky_0.autotb.v" Line 311
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Nov  3 00:06:16 2025...
+INFO: [COSIM 212-316] Starting C post checking ...
+Running 1 fixed point tests per matrix type on 3 x 3 matrices with LowerTriangular set to 0
+RESULTS_TABLE,Test,IMAT,L Matching,DUT Ratio,LAPACK Ratio,Relative Ratio Difference
+RESULTS_TABLE,0,1,1,0.333333,0.333333,0
+RESULTS_TABLE,0,2,0,0.423319,0.382765,4.05541
+RESULTS_TABLE,0,3,1,0.354167,0.354167,0
+RESULTS_TABLE,0,4,0,0.464593,0.491726,-2.7133
+RESULTS_TABLE,0,5,0,0.623708,0.496184,12.7524
+RESULTS_TABLE,0,6,0,0.253352,0.192952,6.04007
+RESULTS_TABLE,0,7,0,0.313315,0.258333,5.49821
+RESULTS_TABLE,0,9,0,0.441006,0.441006,0
+SUMMARY_TABLE,imat,Min Ratio, Max Ratio,Min Diff (Smaller),Max Diff (Larger),Same,Better,Worse
+SUMMARY_TABLE,1,0.333333,0.333333,0,0,1,0,0
+SUMMARY_TABLE,2,0.423319,0.423319,0,4.05541,0,0,1
+SUMMARY_TABLE,3,0.354167,0.354167,0,0,1,0,0
+SUMMARY_TABLE,4,0.464593,0.464593,-2.7133,0,0,1,0
+SUMMARY_TABLE,5,0.623708,0.623708,0,12.7524,0,0,1
+SUMMARY_TABLE,6,0.253352,0.253352,0,6.04007,0,0,1
+SUMMARY_TABLE,7,0.313315,0.313315,0,5.49821,0,0,1
+SUMMARY_TABLE,8,30,0,0,0,0,0,0
+SUMMARY_TABLE,9,0.441006,0.441006,0,0,1,0,0
+SUMMARY_TABLE,all,0.253352,0.623708,-2.7133,12.7524,3,1,4
+TB:Pass
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:53; Allocated memory: 12.445 MB.
+INFO: [HLS 200-112] Total CPU user time: 19 seconds. Total CPU system time: 9 seconds. Total elapsed time: 241.849 seconds; peak allocated memory: 443.523 MB.

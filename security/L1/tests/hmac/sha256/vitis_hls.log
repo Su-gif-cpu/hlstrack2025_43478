@@ -1,0 +1,997 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sun Nov  2 23:53:10 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source T:/Xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'Yolo' on host 'laptop-h2r0e34p' (Windows NT_amd64 version 10.0) on Sun Nov 02 23:53:12 +0800 2025
+INFO: [HLS 200-10] In directory 'D:/fpgachina2025_43478/security/L1/tests/hmac/sha256'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset hmac_sha256_test.prj 
+INFO: [HLS 200-10] Creating and opening project 'D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj'.
+INFO: [HLS 200-1510] Running: add_files test.cpp -cflags -ID:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include 
+INFO: [HLS 200-10] Adding design file 'test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb test.cpp gld.dat -cflags -ID:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include 
+INFO: [HLS 200-10] Adding test bench file 'test.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'gld.dat' to the project
+INFO: [HLS 200-1510] Running: set_top test_hmac_sha256 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution 'D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 12.8 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12.8ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 10% 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.28ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../test.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../test.cpp:40:
+In file included from T:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from T:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from T:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+T:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+T:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+********************************
+   Testing hmac+SHA256 on HLS project   
+********************************
+key = key00000000000000000000000000000   len=32
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc   len=50
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x63643263
+key = key00000000000000000000000000000   len=20
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc2   len=51
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x636432630x32
+output:   
+cfe02059a070abd71b5f41f0d06bf644975c061095ca363608957f3ceb112688
+output:   
+21e10b27d582d0103c3e07972d9ea5a9029520f328360922e72f02219bafb260
+
+PASS: 2 inputs verified, no error found.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 384
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:12; Allocated memory: 1.094 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.158 seconds; current allocated memory: 261.156 MB.
+INFO: [HLS 200-10] Analyzing design file 'test.cpp' ... 
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:90:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:93:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:96:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:99:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:191:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:194:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:197:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:244:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:247:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:250:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:268:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:272:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:275:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:278:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:282:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:285:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:852:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:857:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:860:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:863:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:868:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:871:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:874:9)
+WARNING: [HLS 207-5538] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:879:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 15.037 seconds; current allocated memory: 266.277 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 5,813 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,037 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 4,641 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,846 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,846 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,913 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,669 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,681 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,415 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,453 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,453 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,420 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,413 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,413 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,461 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 4,328 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-273] In function 'xf::security::internal::dup_strm(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:550:0)
+INFO: [HLS 214-131] Inlining function 'SSIG0(unsigned int)' into 'xf::security::internal::generateMsgSchedule(hls::stream<xf::security::internal::SHA256Block, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:624:36)
+INFO: [HLS 214-131] Inlining function 'SSIG1(unsigned int)' into 'xf::security::internal::generateMsgSchedule(hls::stream<xf::security::internal::SHA256Block, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:623:36)
+INFO: [HLS 214-131] Inlining function 'BSIG0(unsigned int)' into 'void xf::security::internal::sha256Digest<256>(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:777:36)
+INFO: [HLS 214-131] Inlining function 'MAJ(unsigned int, unsigned int, unsigned int)' into 'void xf::security::internal::sha256Digest<256>(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:776:33)
+INFO: [HLS 214-131] Inlining function 'BSIG1(unsigned int)' into 'void xf::security::internal::sha256Digest<256>(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:775:36)
+INFO: [HLS 214-131] Inlining function 'CH(unsigned int, unsigned int, unsigned int)' into 'void xf::security::internal::sha256Digest<256>(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:774:32)
+INFO: [HLS 214-131] Inlining function 'xf::security::internal::dup_strm(hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned long long, 0>&, hls::stream<bool, 0>&)' into 'void xf::security::internal::sha256_top<32, 256>(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<64>, 0>&, hls::stream<bool, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:886:5)
+INFO: [HLS 214-377] Adding 'b1' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:301:9)
+INFO: [HLS 214-377] Adding 'b225' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:256:9)
+INFO: [HLS 214-377] Adding 'b81' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:203:9)
+INFO: [HLS 214-377] Adding 'b' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:180:9)
+INFO: [HLS 214-377] Adding 'b0' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:151:9)
+INFO: [HLS 214-377] Adding 'blk' into disaggregation list because there's array-partition pragma applied on the struct field (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:584:9)
+INFO: [HLS 214-210] Disaggregating variable 'b1' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:300:25)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-210] Disaggregating variable 'b225' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:255:25)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-210] Disaggregating variable 'b81' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:202:25)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-210] Disaggregating variable 'b' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:179:25)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-210] Disaggregating variable 'b0' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:150:14)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-210] Disaggregating variable 'blk' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:583:14)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_612_3' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:612:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_629_4' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:629:35)
+INFO: [HLS 214-291] Loop 'LOOP_SHA256_GEN_ONE_FULL_BLK' is marked as complete unroll implied by the pipeline pragma (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:154:13)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_EMIT_H256' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:814:13) in function 'xf::security::internal::sha256Digest<256>' completely with a factor of 8 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:696:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_PREPARE_WT16' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:591:13) in function 'xf::security::internal::generateMsgSchedule' completely with a factor of 16 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:574:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_612_3' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:612:35) in function 'xf::security::internal::generateMsgSchedule' completely with a factor of 15 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:574:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_629_4' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:629:35) in function 'xf::security::internal::generateMsgSchedule' completely with a factor of 15 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:574:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_GEN_ONE_FULL_BLK' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:154:13) in function 'xf::security::internal::preProcessing' completely with a factor of 16 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'LOOP_SHA256_GEN_ONE_FULL_BLK' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:154:13) in function 'xf::security::internal::preProcessing' has been removed because the loop is unrolled completely (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_GEN_COPY_TAIL_ONLY' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:259:13) in function 'xf::security::internal::preProcessing' completely with a factor of 16 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_GEN_L_ONLY_BLK' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:303:13) in function 'xf::security::internal::preProcessing' completely with a factor of 14 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_GEN_COPY_TAIL_AND_ONE' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:206:13) in function 'xf::security::internal::preProcessing' completely with a factor of 14 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'LOOP_SHA256_GEN_PAD_13_ZEROS' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:186:13) in function 'xf::security::internal::preProcessing' completely with a factor of 13 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_128_3' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:128:31) in function 'xf::security::internal::kpad<32, 64, 256, 32, 64, sha256_wrapper>' completely with a factor of 64 (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:113:0)
+INFO: [HLS 214-178] Inlining function 'void xf::security::sha256<32>(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<64>, 0>&, hls::stream<bool, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&) (.18.32.44.66.79)' into 'sha256_wrapper<32, 64, 256>::hash(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<64>, 0>&, hls::stream<bool, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (test.cpp:60:0)
+INFO: [HLS 214-178] Inlining function 'void xf::security::hmac<32, 64, 256, 32, 64, sha256_wrapper>(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<64>, 0>&, hls::stream<bool, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' into 'test_hmac_sha256(hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<32>, 0>&, hls::stream<ap_uint<64>, 0>&, hls::stream<bool, 0>&, hls::stream<ap_uint<256>, 0>&, hls::stream<bool, 0>&)' (test.cpp:70:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN2xf8security8internal12sha256DigestILi256EEEvRN3hls6streamIyLi0EEERNS4_IbLi0EEERNS4_IjLi0EEERNS4_I7ap_uintIXT_EELi0EEES8_E1K': Complete partitioning on dimension 1. (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:702:0)
+INFO: [HLS 214-248] Applying array_partition to 'H': Complete partitioning on dimension 1. (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:721:18)
+INFO: [HLS 214-241] Aggregating fifo (hls::stream) variable 'blk_strm' with compact=bit mode in 512-bits (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:850:27)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_580_2'. (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:580:27)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'LOOP_SHA256_GENENERATE_MAIN'. (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:134:5)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'LOOP_SHA256_DIGEST_MAIN'. (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:714:5)
+INFO: [HLS 214-455] Changing loop 'xf::security::internal::sha256_top<32, 256>_Loop_VITIS_LOOP_554_1_proc' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:554:23) to a process function for dataflow in function 'xf::security::internal::sha256_top<32, 256>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:554:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 11.599 seconds; current allocated memory: 269.676 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 269.688 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.388 seconds; current allocated memory: 278.633 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.409 seconds; current allocated memory: 284.672 MB.
+INFO: [XFORM 203-712] Applying dataflow to function 'xf::security::internal::sha256_top<32, 256>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:552:1), detected/extracted 4 process function(s): 
+	 'xf::security::internal::preProcessing'
+	 'xf::security::internal::sha256_top<32, 256>_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc'
+	 'xf::security::internal::generateMsgSchedule'
+	 'xf::security::internal::sha256Digest<256>'.
+INFO: [XFORM 203-712] Applying dataflow to function 'xf::security::internal::msgHash<32, 64, 256, 32, 64, sha256_wrapper>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:187:1), detected/extracted 2 process function(s): 
+	 'xf::security::internal::mergeKipad<32, 64, 256, 64>'
+	 'sha256_wrapper<32, 64, 256>::hash'.
+INFO: [XFORM 203-712] Applying dataflow to function 'xf::security::internal::resHash<32, 64, 256, 32, 64, sha256_wrapper>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:240:1), detected/extracted 2 process function(s): 
+	 'xf::security::internal::mergeKopad<32, 64, 256, 32, 64>'
+	 'sha256_wrapper<32, 64, 256>::hash.1'.
+INFO: [XFORM 203-712] Applying dataflow to function 'xf::security::internal::hmacDataflow<32, 64, 256, 32, 64, sha256_wrapper>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:265:1), detected/extracted 3 process function(s): 
+	 'xf::security::internal::kpad<32, 64, 256, 32, 64, sha256_wrapper>'
+	 'xf::security::internal::msgHash<32, 64, 256, 32, 64, sha256_wrapper>'
+	 'xf::security::internal::resHash<32, 64, 256, 32, 64, sha256_wrapper>'.
+INFO: [XFORM 203-11] Balancing expressions in function 'xf::security::internal::sha256Digest<256>' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:58:9)...14 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'xf::security::internal::generateMsgSchedule' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:80:27)...6 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.254 seconds; current allocated memory: 310.758 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'LOOP_SHA256_DIGEST_NBLK'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:734:9) and 'LOOP_SHA256_UPDATE_64_ROUNDS'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:746:13) in function 'xf::security::internal::sha256Digest<256>' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_SHA256_DIGEST_NBLK' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:734:9) in function 'xf::security::internal::sha256Digest<256>'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_117_1' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/hmac.hpp:117:27) in function 'xf::security::internal::kpad<32, 64, 256, 32, 64, sha256_wrapper>' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [HLS 200-1990] Performance of loop 'LOOP_SHA256_DIGEST_NBLK_LOOP_SHA256_UPDATE_64_ROUNDS'in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'LOOP_SHA256_DIGEST_NBLK_LOOP_SHA256_UPDATE_64_ROUNDS'in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'LOOP_SHA256_DIGEST_NBLK_LOOP_SHA256_UPDATE_64_ROUNDS'in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'LOOP_SHA256_DIGEST_MAIN'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:714:5) in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'LOOP_SHA256_DIGEST_MAIN'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:714:5) in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'LOOP_SHA256_DIGEST_MAIN'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:714:5) in function 'sha256Digest<256>' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1991] Performance of loop 'LOOP_SHA256_PREPARE_WT64'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:599:13) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'LOOP_SHA256_PREPARE_WT64'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:599:13) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'VITIS_LOOP_580_2'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:580:27) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'VITIS_LOOP_580_2'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:580:27) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'VITIS_LOOP_580_2'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:580:27) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'VITIS_LOOP_577_1'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:577:23) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'VITIS_LOOP_577_1'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:577:23) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'VITIS_LOOP_577_1'(D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:577:23) in function 'generateMsgSchedule' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-957] Unable to rewind loop 'LOOP_SHA256_DIGEST_MAIN' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:714) in function 'sha256Digest<256>': loop nest is not flattened.
+Resolution: For help on HLS 200-957 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-957.html
+WARNING: [HLS 200-957] Unable to rewind loop 'VITIS_LOOP_577_1' (D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/../../../../L1/include\xf_security/sha224_256.hpp:577) in function 'generateMsgSchedule': loop nest is not flattened.
+Resolution: For help on HLS 200-957 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-957.html
+WARNING: [HLS 200-765] Process mergeKipad<32, 64, 256, 64> is made part of the output synchronization in its dataflow region, because it has an external FIFO output and no PIPO output
+Resolution: For help on HLS 200-765 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-765.html
+WARNING: [HLS 200-1450] Process mergeKipad<32, 64, 256, 64> has both a successor and writes an output to its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this output via a successor process.
+Resolution: For help on HLS 200-1450 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1450.html
+WARNING: [HLS 200-1614] Cosimulation may deadlock if process msgHash<32, 64, 256, 32, 64, sha256_wrapper> has a streamed top-level array input and has predecessor processes. If a deadlock occurs, please consider converting the streamed array into an hls::stream
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.241 seconds; current allocated memory: 487.234 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'test_hmac_sha256' ...
+WARNING: [SYN 201-103] Legalizing function name 'kpad<32, 64, 256, 32, 64, sha256_wrapper>_Pipeline_VITIS_LOOP_119_2' to 'kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2'.
+WARNING: [SYN 201-103] Legalizing function name 'kpad<32, 64, 256, 32, 64, sha256_wrapper>' to 'kpad_32_64_256_32_64_sha256_wrapper_s'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKipad<32, 64, 256, 64>_Pipeline_VITIS_LOOP_161_2' to 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKipad<32, 64, 256, 64>_Pipeline_VITIS_LOOP_170_3' to 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKipad<32, 64, 256, 64>' to 'mergeKipad_32_64_256_64_s'.
+WARNING: [SYN 201-103] Legalizing function name 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc.1' to 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc.1.1' to 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sha256Digest<256>' to 'sha256Digest_256_s'.
+WARNING: [SYN 201-103] Legalizing function name 'sha256_top<32, 256>' to 'sha256_top_32_256_s'.
+WARNING: [SYN 201-103] Legalizing function name 'msgHash<32, 64, 256, 32, 64, sha256_wrapper>' to 'msgHash_32_64_256_32_64_sha256_wrapper_s'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKopad<32, 64, 256, 32, 64>_Pipeline_VITIS_LOOP_219_2' to 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKopad<32, 64, 256, 32, 64>_Pipeline_VITIS_LOOP_225_3' to 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3'.
+WARNING: [SYN 201-103] Legalizing function name 'mergeKopad<32, 64, 256, 32, 64>' to 'mergeKopad_32_64_256_32_64_s'.
+WARNING: [SYN 201-103] Legalizing function name 'hash.1' to 'hash_1'.
+WARNING: [SYN 201-103] Legalizing function name 'resHash<32, 64, 256, 32, 64, sha256_wrapper>' to 'resHash_32_64_256_32_64_sha256_wrapper_s'.
+WARNING: [SYN 201-103] Legalizing function name 'hmacDataflow<32, 64, 256, 32, 64, sha256_wrapper>' to 'hmacDataflow_32_64_256_32_64_sha256_wrapper_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_119_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_119_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.651 seconds; current allocated memory: 492.145 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 493.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kpad_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.129 seconds; current allocated memory: 494.863 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.107 seconds; current allocated memory: 495.301 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_161_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_161_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 495.570 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.045 seconds; current allocated memory: 495.594 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_170_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_170_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 495.816 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.046 seconds; current allocated memory: 495.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKipad_32_64_256_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 496.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 496.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_SHA256_GEN_FULL_BLKS'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 16, Depth = 18, loop 'LOOP_SHA256_GEN_FULL_BLKS'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.147 seconds; current allocated memory: 496.914 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 496.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'preProcessing' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.344 seconds; current allocated memory: 504.203 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.262 seconds; current allocated memory: 504.234 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_554_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_554_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.264 seconds; current allocated memory: 504.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 504.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 504.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 504.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'generateMsgSchedule' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_SHA256_PREPARE_WT64'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 2, loop 'LOOP_SHA256_PREPARE_WT64'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 504.566 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.081 seconds; current allocated memory: 504.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sha256Digest_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_SHA256_DIGEST_NBLK_LOOP_SHA256_UPDATE_64_ROUNDS'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 4, loop 'LOOP_SHA256_DIGEST_NBLK_LOOP_SHA256_UPDATE_64_ROUNDS'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.237 seconds; current allocated memory: 505.938 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 506.570 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sha256_top_32_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO start_for_generateMsgSchedule_U0 (from preProcessing_U0 to generateMsgSchedule_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO start_for_sha256Digest_256_U0 (from sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1_U0 to sha256Digest_256_U0) to 3 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.154 seconds; current allocated memory: 506.977 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 507.023 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hash' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.086 seconds; current allocated memory: 507.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 507.188 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'msgHash_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.089 seconds; current allocated memory: 507.195 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 507.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_219_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_219_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.092 seconds; current allocated memory: 507.801 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 507.801 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_225_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_225_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 507.980 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 507.980 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mergeKopad_32_64_256_32_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 508.164 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 508.203 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hash_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 508.355 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 508.410 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'resHash_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 508.617 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 508.824 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hmacDataflow_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 509.004 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 509.105 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'test_hmac_sha256' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 509.164 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 509.336 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2' pipeline 'VITIS_LOOP_119_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.211 seconds; current allocated memory: 511.133 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kpad_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kpad_32_64_256_32_64_sha256_wrapper_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 514.426 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2' pipeline 'VITIS_LOOP_161_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.654 seconds; current allocated memory: 518.312 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3' pipeline 'VITIS_LOOP_170_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 519.047 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKipad_32_64_256_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKipad_32_64_256_64_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.142 seconds; current allocated memory: 519.457 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS' pipeline 'LOOP_SHA256_GEN_FULL_BLKS' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 521.254 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'preProcessing' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'preProcessing'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.58 seconds; current allocated memory: 527.184 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1' pipeline 'VITIS_LOOP_554_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.662 seconds; current allocated memory: 538.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.192 seconds; current allocated memory: 538.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'generateMsgSchedule' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'generateMsgSchedule'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.212 seconds; current allocated memory: 538.805 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sha256Digest_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_65_6_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sha256Digest_256_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.684 seconds; current allocated memory: 543.281 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sha256_top_32_256_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1_U0' to 'start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb' due to the length limit 80
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sha256_top_32_256_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'blk_strm_U(test_hmac_sha256_fifo_w512_d32_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'nblk_strm_U(test_hmac_sha256_fifo_w64_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'end_nblk_strm_U(test_hmac_sha256_fifo_w1_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'nblk_strm1_U(test_hmac_sha256_fifo_w64_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'end_nblk_strm1_U(test_hmac_sha256_fifo_w1_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'nblk_strm2_U(test_hmac_sha256_fifo_w64_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'end_nblk_strm2_U(test_hmac_sha256_fifo_w1_d8_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'w_strm_U(test_hmac_sha256_fifo_w32_d256_B)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb_U(test_hmac_sha256_start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_generateMsgSchedule_U0_U(test_hmac_sha256_start_for_generateMsgSchedule_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_sha256Digest_256_U0_U(test_hmac_sha256_start_for_sha256Digest_256_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.821 seconds; current allocated memory: 548.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hash' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hash'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.208 seconds; current allocated memory: 549.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'msgHash_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'msgHash_32_64_256_32_64_sha256_wrapper_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'mergeKipadStrm_U(test_hmac_sha256_fifo_w32_d128_B)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'mergeKipadLenStrm_U(test_hmac_sha256_fifo_w64_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'eMergeKipadLenStrm_U(test_hmac_sha256_fifo_w1_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_hash_U0_U(test_hmac_sha256_start_for_hash_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 549.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2' pipeline 'VITIS_LOOP_219_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.322 seconds; current allocated memory: 550.316 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3' pipeline 'VITIS_LOOP_225_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.272 seconds; current allocated memory: 550.734 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mergeKopad_32_64_256_32_64_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mergeKopad_32_64_256_32_64_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.193 seconds; current allocated memory: 551.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hash_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hash_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 552.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'resHash_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] RTL name 'fifo_w64_d4_D' is changed to 'fifo_w64_d4_D_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'fifo_w1_d4_D' is changed to 'fifo_w1_d4_D_x' due to conflict.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'resHash_32_64_256_32_64_sha256_wrapper_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'mergeKopadStrm_U(test_hmac_sha256_fifo_w32_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'mergeKopadLenStrm_U(test_hmac_sha256_fifo_w64_d4_D_x)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'eMergeKopadLenStrm_U(test_hmac_sha256_fifo_w1_d4_D_x)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_hash_1_U0_U(test_hmac_sha256_start_for_hash_1_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.297 seconds; current allocated memory: 553.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hmacDataflow_32_64_256_32_64_sha256_wrapper_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] RTL name 'fifo_w1_d4_D' is changed to 'fifo_w1_d4_D_x0' due to conflict.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hmacDataflow_32_64_256_32_64_sha256_wrapper_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'kipadStrm_U(test_hmac_sha256_fifo_w512_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'kopadStrm_U(test_hmac_sha256_fifo_w512_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'eKipadStrm_U(test_hmac_sha256_fifo_w1_d4_D_x0)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'kopad2Strm_U(test_hmac_sha256_fifo_w512_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'msgHashStrm_U(test_hmac_sha256_fifo_w256_d4_D)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'eMsgHashStrm_U(test_hmac_sha256_fifo_w1_d4_D_x0)' using Distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_msgHash_32_64_256_32_64_sha256_wrapper_U0_U(test_hmac_sha256_start_for_msgHash_32_64_256_32_64_sha256_wrapper_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_resHash_32_64_256_32_64_sha256_wrapper_U0_U(test_hmac_sha256_start_for_resHash_32_64_256_32_64_sha256_wrapper_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 553.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'test_hmac_sha256' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/keyStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/msgStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/lenStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/eLenStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/hshStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'test_hmac_sha256/eHshStrm' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'test_hmac_sha256' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'test_hmac_sha256'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.374 seconds; current allocated memory: 555.051 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.061 seconds; current allocated memory: 558.254 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.342 seconds; current allocated memory: 568.262 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for test_hmac_sha256.
+INFO: [VLOG 209-307] Generating Verilog RTL for test_hmac_sha256.
+INFO: [HLS 200-789] **** Estimated Fmax: 87.52 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:47; Allocated memory: 308.285 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "T:/Xilinx/Vitis/2024.2/vcxx/libexec/clang++"
+   Compiling test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_test_hmac_sha256.cpp
+   Compiling apatb_test_hmac_sha256_util.cpp
+   Compiling apatb_test_hmac_sha256_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+********************************
+   Testing hmac+SHA256 on HLS project   
+********************************
+key = key00000000000000000000000000000   len=32
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc   len=50
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x63643263
+key = key00000000000000000000000000000   len=20
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc2   len=51
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x636432630x32
+output:   
+cfe02059a070abd71b5f41f0d06bf644975c061095ca363608957f3ceb112688
+output:   
+21e10b27d582d0103c3e07972d9ea5a9029520f328360922e72f02219bafb260
+
+PASS: 2 inputs verified, no error found.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 384
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+D:\fpgachina2025_43478\security\L1\tests\hmac\sha256\hmac_sha256_test.prj\solution1\sim\verilog>set PATH= 
+
+D:\fpgachina2025_43478\security\L1\tests\hmac\sha256\hmac_sha256_test.prj\solution1\sim\verilog>call T:/Xilinx/Vivado/2024.2/bin/xelab xil_defaultlib.apatb_test_hmac_sha256_top glbl -Oenable_linking_all_libraries  -prj test_hmac_sha256.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib "ieee_proposed=./ieee_proposed" -s test_hmac_sha256  
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: T:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_test_hmac_sha256_top glbl -Oenable_linking_all_libraries -prj test_hmac_sha256.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib ieee_proposed=./ieee_proposed -s test_hmac_sha256 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_eHshStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_eHshStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_eLenStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_eLenStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_hshStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_hshStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_keyStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_keyStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_lenStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_lenStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_autofifo_msgStrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_msgStrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_test_hmac_sha256_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w1_d4_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w1_d4_D_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D_x
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D_x_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w1_d4_D_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D_x0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d4_D_x0_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w1_d8_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d8_S
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w1_d8_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w256_d4_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w256_d4_D
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w256_d4_D_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w32_d128_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d128_B
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d128_B_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w32_d256_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d256_B
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d256_B_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w32_d4_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d4_D
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w32_d4_D_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w512_d32_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w512_d32_S
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w512_d32_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w512_d4_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w512_d4_D
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w512_d4_D_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w64_d4_D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d4_D
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d4_D_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w64_d4_D_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d4_D_x
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d4_D_x_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_fifo_w64_d8_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d8_S
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_fifo_w64_d8_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_generateMsgSchedule.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_generateMsgSchedule
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_hash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_hash
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_hash_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_hash_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_hmacDataflow_32_64_256_32_64_sha256_wrapper_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_hmacDataflow_32_64_256_32_64_sha256_wrapper_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_kpad_32_64_256_32_64_sha256_wrapper_Pipeline_VITIS_LOOP_119_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_kpad_32_64_256_32_64_sha256_wrapper_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_kpad_32_64_256_32_64_sha256_wrapper_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_161_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKipad_32_64_256_64_Pipeline_VITIS_LOOP_170_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKipad_32_64_256_64_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKipad_32_64_256_64_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_219_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKopad_32_64_256_32_64_Pipeline_VITIS_LOOP_225_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_mergeKopad_32_64_256_32_64_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_mergeKopad_32_64_256_32_64_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_msgHash_32_64_256_32_64_sha256_wrapper_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_msgHash_32_64_256_32_64_sha256_wrapper_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_preProcessing.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_preProcessing
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_preProcessing_Pipeline_LOOP_SHA256_GEN_FULL_BLKS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_resHash_32_64_256_32_64_sha256_wrapper_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_resHash_32_64_256_32_64_sha256_wrapper_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_sha256Digest_256_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_sha256Digest_256_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_sha256_top_32_256_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_sha256_top_32_256_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_strm2_wr_proc_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_sparsemux_65_6_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_sparsemux_65_6_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_generateMsgSchedule_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_generateMsgSchedule_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_generateMsgSchedule_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_hash_1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_hash_1_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_hash_1_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_hash_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_hash_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_hash_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_msgHash_32_64_256_32_64_sha256_wrapper_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_msgHash_32_64_256_32_64_sha256_wrapper_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_msgHash_32_64_256_32_64_sha256_wrapper_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_resHash_32_64_256_32_64_sha256_wrapper_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_resHash_32_64_256_32_64_sha256_wrapper_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_resHash_32_64_256_32_64_sha256_wrapper_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_sha256Digest_256_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_sha256Digest_256_U0
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_sha256Digest_256_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256_start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb
+INFO: [VRFC 10-311] analyzing module test_hmac_sha256_start_for_sha256_top_Block_entry_end_nblk_strm_rd_end_nblk_strm1_wr_end_nblk_bkb_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.test_hmac_sha256_flow_control_lo...
+Compiling module xil_defaultlib.test_hmac_sha256_kpad_32_64_256_...
+Compiling module xil_defaultlib.test_hmac_sha256_kpad_32_64_256_...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKipad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKipad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKipad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_preProcessing_P...
+Compiling module xil_defaultlib.test_hmac_sha256_preProcessing
+Compiling module xil_defaultlib.test_hmac_sha256_sha256_top_Bloc...
+Compiling module xil_defaultlib.test_hmac_sha256_sha256_top_Bloc...
+Compiling module xil_defaultlib.test_hmac_sha256_generateMsgSche...
+Compiling module xil_defaultlib.test_hmac_sha256_sparsemux_65_6_...
+Compiling module xil_defaultlib.test_hmac_sha256_sha256Digest_25...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w512_d32_S...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w512_d32_S...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d8_S_S...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d8_S_d...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d8_S_Sh...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d8_S_de...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d256_B...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d256_B...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_sha25...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_sha25...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_gener...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_gener...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_sha25...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_sha25...
+Compiling module xil_defaultlib.test_hmac_sha256_sha256_top_32_2...
+Compiling module xil_defaultlib.test_hmac_sha256_hash
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d128_B...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d128_B...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d4_D_r...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d4_D_d...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_ra...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_de...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_hash_...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_hash_...
+Compiling module xil_defaultlib.test_hmac_sha256_msgHash_32_64_2...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKopad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKopad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_mergeKopad_32_6...
+Compiling module xil_defaultlib.test_hmac_sha256_hash_1
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d4_D_r...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w32_d4_D_d...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d4_D_x...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w64_d4_D_x...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_x_...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_x_...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_hash_...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_hash_...
+Compiling module xil_defaultlib.test_hmac_sha256_resHash_32_64_2...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w512_d4_D_...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w512_d4_D_...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_x0...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w1_d4_D_x0...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w256_d4_D_...
+Compiling module xil_defaultlib.test_hmac_sha256_fifo_w256_d4_D_...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_msgHa...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_msgHa...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_resHa...
+Compiling module xil_defaultlib.test_hmac_sha256_start_for_resHa...
+Compiling module xil_defaultlib.test_hmac_sha256_hmacDataflow_32...
+Compiling module xil_defaultlib.test_hmac_sha256
+Compiling module xil_defaultlib.AESL_autofifo_keyStrm
+Compiling module xil_defaultlib.AESL_autofifo_msgStrm
+Compiling module xil_defaultlib.AESL_autofifo_lenStrm
+Compiling module xil_defaultlib.AESL_autofifo_eLenStrm
+Compiling module xil_defaultlib.AESL_autofifo_hshStrm
+Compiling module xil_defaultlib.AESL_autofifo_eHshStrm
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_2
+Compiling module xil_defaultlib.df_fifo_intf_default
+Compiling module xil_defaultlib.df_process_intf_default
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.pp_loop_intf(FSM_WIDTH=5)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=5)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=7)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=37)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=21)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=6)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=16)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_test_hmac_sha256_top
+Compiling module work.glbl
+Built simulation snapshot test_hmac_sha256
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sun Nov  2 23:55:43 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/test_hmac_sha256/xsim_script.tcl
+# xsim {test_hmac_sha256} -autoloadwcfg -tclbatch {test_hmac_sha256.tcl}
+Time resolution is 1 ps
+source test_hmac_sha256.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "135000"
+// RTL Simulation : 1 / 1 [n/a] @ "9786000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 9862400 ps : File "D:/fpgachina2025_43478/security/L1/tests/hmac/sha256/hmac_sha256_test.prj/solution1/sim/verilog/test_hmac_sha256.autotb.v" Line 490
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  2 23:55:48 2025...
+INFO: [COSIM 212-316] Starting C post checking ...
+********************************
+   Testing hmac+SHA256 on HLS project   
+********************************
+key = key00000000000000000000000000000   len=32
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc   len=50
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x63643263
+key = key00000000000000000000000000000   len=20
+0x3079656b0x303030300x303030300x303030300x303030300x303030300x303030300x30303030
+msg = The quick brown fox jumps over the lazy dog. Its hmac is 80070713463e7749b90c2dc2   len=51
+0x206568540x636975710x7262206b0x206e776f0x20786f660x706d756a0x766f20730x742072650x6c2065680x20797a610x2e676f640x737449200x616d68200x736920630x303038200x313730370x333634330x343737650x303962390x636432630x32
+output:   
+cfe02059a070abd71b5f41f0d06bf644975c061095ca363608957f3ceb112688
+output:   
+21e10b27d582d0103c3e07972d9ea5a9029520f328360922e72f02219bafb260
+
+PASS: 2 inputs verified, no error found.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 41
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:34; Allocated memory: 10.723 MB.
+INFO: [HLS 200-112] Total CPU user time: 25 seconds. Total CPU system time: 10 seconds. Total elapsed time: 161.254 seconds; peak allocated memory: 579.848 MB.
